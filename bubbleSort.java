@@ -5,11 +5,18 @@ public class bubbleSort {
         arr[j] = temp;
     }
     public static void  sort(int[] arr){
+        
         int n = arr.length;
         for(int i=0;i<n-1;i++){
+            int didSwap = 0;
             for(int j=0;j<n-i-1;j++){
-                if(arr[j] < arr[j+1])
+                if(arr[j] > arr[j+1]){
                     swap(arr, j, j+1);
+                    didSwap = 1;
+                }       
+            }
+            if(didSwap == 0){
+                break;
             }
         }
     }
@@ -19,7 +26,7 @@ public class bubbleSort {
         }
     }
     public static void main(String[] args) {
-        int[] arr = {7,5,4,1,3,89,9,67,4,2,0};
+        int[] arr = {1,2,3,46,50,3,2,4,5,6};
         sort(arr);
         display(arr);
     }
